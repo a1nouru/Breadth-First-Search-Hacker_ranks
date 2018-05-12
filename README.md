@@ -1,17 +1,61 @@
 # Breadth-First-Search-Hacker_ranks
 Breadth First Search: Shortest Reach
 
-Consider an undirected graph where each edge is the same weight. Each of the nodes is labeled consecutively.
+#Dijkstra: Shortest Reach 2#
 
-You will be given a number of queries. For each query, you will be given a list of edges describing an undirected graph. After you create a representation of the graph, you must determine and report the shortest distance to each of the other nodes from a given starting position using the breadth-first search algorithm (BFS). Distances are to be reported in node number order, ascending. If a node is unreachable, print  for that node. Each of the edges weighs 6 units of distance.
+###Problem Statement###
 
-Input Format
+Given a graph consisting N nodes (labelled 1 to N) where a specific given node S represents the starting position S and an edge between two nodes is of a given length, which may or may not be equal to other lengths in the graph.
 
-The first line contains an integer , the number of queries. Each of the following  sets of lines has the following format:
+It is required to calculate the shortest distance from the start position (Node S) to all of the other nodes in the graph.
 
-The first line contains two space-separated integers  and , the number of nodes and edges in the graph.
-Each line  of the  subsequent lines contains two space-separated integers,  and , describing an edge connecting node  to node .
-The last line contains a single integer, , denoting the index of the starting node.
-Constraints
+Note 1: If a node is unreachable , the distance is assumed as −1.
+
+###Input Format###
+
+The first line contains T, denoting the number of test cases. First line of each test case has two integers N, denoting the number of nodes in the graph and M, denoting the number of edges in the graph.
+
+The next M lines each consist of three space separated integers x y r, where x and y denote the two nodes between which the undirected edge exists, r denotes the length of edge between these corrresponding nodes.
+
+The last line has an integer S, denoting the starting position.
+
+###Constraints### 1≤T≤10
+2≤N≤3000
+1≤M≤(N×(N−1))/2
+1≤x,y,S≤N
+1≤r≤350
+
+If there are edges between the same pair of nodes with different weights, they are to be considered as is, like multiple edges.
+
+###Output Format###
+
+For each of the T test cases, print a single line consisting N−1 space separated integers denoting the shortest distance of N−1 nodes from starting position S.
+
+For unreachable nodes, print −1.
+
+###Sample Input###
+
+1
+4 4
+1 2 24
+1 4 20
+3 1 3
+4 3 12
+1
+###Sample Output###
+
+24 3 15
+###Explanation###
+
+The graph given in the test case is shown as :
 
 
+The straight line is a weighted edge, denoting length of edge between the corresponding nodes.
+The nodes S,B,C and D denote the obvious node 1,2,3 and 4 in the test case.
+The shortest paths followed for the three nodes B,C and D are as follows :
+
+S->B - Shortest Path Value : 24
+
+S->C - Shortest Path Value : 3
+
+S->C->D - Shortest Path Value : 15
