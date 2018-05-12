@@ -78,4 +78,36 @@ public class Solution {
             
             int vertexNum  = scan.nextInt();
             int Numedges = scan.nextInt();
+            
+       
+            Graph G = new Graph(vertexNum);
+            
+            for(int k=0;k<Numedges;k++)
+{
+                int from = scan.nextInt();
+                
+                int to =scan.nextInt();
+                G.addNewEdge(from-1, to-1);
+            }
+            
+            int startIndex = scan.nextInt();
+            int[] retGraph = getShorestPathFunc(G, startIndex-1);
+            
+            for(int k=0;k<retGraph.length;k++)
+{
+                
+                if(k==startIndex-1) continue;
+                System.out.print(retGraph[k]);
+                
+                if(k<retGraph.length-1){
+                    System.out.print(" ");
+            }
+            }
+        System.out.println();
+}
+}
+}
+
+
+           
       
